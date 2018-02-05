@@ -721,8 +721,72 @@
 <!--行业资讯 begin-->
 <div class="info">
     <div class="info-container">
-        
+        <h2><span>了解行业资讯</span></h2>
+        <p><span>这里会有您在创业过程中遇到的问题和知识</span></p>
+        <ul class="info-list clear">
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p>5</p>
+                    <p>2018.2</p>
+                </div>
+                <div>
+                    <p><a href="javascript:;">这样分析财务报表，就能看出你应缴哪些税！</a></p>
+                    <p>企业会计报表就是企业经营状况与经营过程的“脸谱”表现，然而对对对对</p>
+                </div>
+            </li>
+        </ul>
     </div>
+
 </div>
 <!--行业资讯 end-->
 
@@ -735,7 +799,9 @@
             team_h2Top = $('.team-container h2>span').offset().top,
             team_pTop = $('.team-container p>span').offset().top,
             flow_h2Top = $('.flow-container h2>span').offset().top,
-            flow_pTop = $('.flow-container h2>span').offset().top;
+            flow_pTop = $('.flow-container p>span').offset().top,
+            info_h2Top = $('.info-container h2>span').offset().top,
+            info_pTop = $('.info-container p>span').offset().top;
 
             if($(window).scrollTop()>server_h2Top/3){
                 $('.server-container h2>span').animate({
@@ -773,6 +839,18 @@
                     marginTop:"-6px"
                 },600)
             }
+        if($(window).scrollTop()>info_h2Top/2 +250){
+            $('.info-container h2>span').animate({
+                opacity:1,
+                marginTop:"-20px"
+            },600)
+        }
+        if($(window).scrollTop()>info_pTop/2 +250){
+            $('.info-container p>span').animate({
+                opacity:1,
+                marginTop:"-6px"
+            },600)
+        }
 
         $(window).scroll(function () {
             if($(window).scrollTop()>server_h2Top/3){
@@ -807,6 +885,18 @@
             }
             if($(window).scrollTop()>flow_pTop/2 +450){
                 $('.flow-container p>span').animate({
+                    opacity:1,
+                    marginTop:"-6px"
+                },600)
+            }
+            if($(window).scrollTop()>info_h2Top/2+650){
+                $('.info-container h2>span').animate({
+                    opacity:1,
+                    marginTop:"-20px"
+                },600)
+            }
+            if($(window).scrollTop()>info_pTop/2+650){
+                $('.info-container p>span').animate({
                     opacity:1,
                     marginTop:"-6px"
                 },600)

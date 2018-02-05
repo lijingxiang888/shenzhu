@@ -54,6 +54,9 @@ body {
 }
 a {
     color: #2a333c;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
     transition: all .25s ease-out;
 
 }
@@ -789,4 +792,100 @@ nav .navbar-container {
     width: 100%;
     height: 132px;
     margin-top: 80px;
+}
+.info {
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.info .info-container {
+    width: 1170px;
+    height: 543px;
+    margin: 0 auto;
+    padding: 70px 0;
+    box-sizing: border-box;
+}
+.info .info-container > h2 {
+    height: 40px;
+    position: relative;
+    font-size: 30px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.info-container > h2 > span {
+    opacity: 0;
+    position: absolute;
+    margin-left: -90px;
+    margin-top: -60px;
+    left: 50%;
+    top: 50%;
+}
+.info .info-container > p {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #666;
+}
+.info .info-container > p > span {
+    opacity: 0;
+    position: absolute;
+    margin-left: -171px;
+    margin-top: 18px;
+    left: 50%;
+    top: 50%;
+}
+.info-container .info-list {
+    margin-top: 60px;
+}
+.info-container .info-list li {
+    float: left;
+    width: 360px;
+    margin-top: 30px;
+    margin-right: 45px;
+    font-size: 16px;
+}
+.info-container .info-list li:nth-child(3n+0) {
+    margin-right: 0;
+}
+.info-container .info-list li > div {
+    height: 85px;
+    float: left;
+}
+.info-container .info-list li > div:first-child {
+    width: 85px;
+    margin-right: 10px;
+    border: 1px solid #333;
+    border-radius: 100%;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.info-container .info-list li > div:first-child:hover {
+    border-color: #f3f3f3;
+    background-color: #FFA500;
+    color: #fff;
+}
+.info-container .info-list li > div:last-child {
+    width: 263px;
+}
+.info-container .info-list li > div:last-child p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.info-container .info-list li > div:last-child p:last-child {
+    line-height: 24px;
+    font-size: 14px;
+    color: #76838f;
+}
+.info-list li > div:first-child > p {
+    text-align: center;
+}
+.info-list li > div:first-child > p:first-child {
+    margin-top: 10px;
+    font-size: 28px;
 }
