@@ -722,7 +722,7 @@
 <div class="info">
     <div class="info-container">
         <h2><span>了解行业资讯</span></h2>
-        <p><span>这里会有您在创业过程中遇到的问题和知识</span></p>
+        <p style="text-align: right"><span>这里会有您在创业过程中遇到的问题和知识</span><a href="javascript:;">了解更多</a></p>
         <ul class="info-list clear">
             <li>
                 <div>
@@ -790,9 +790,55 @@
 </div>
 <!--行业资讯 end-->
 
+<!--合作客户 begin-->
+<div class="partner">
+    <div class="partner-container">
+        <h2><span>我们合作的客户</span></h2>
+        <p><span>超过上万家企业选择我们</span></p>
+        <figure>
+            <img src="images/partner.jpg" alt="">
+        </figure>
+    </div>
+    <div class="partner-bg picMarquee-top">
+        <div class="bd">
+            <ul class="picList">
+                <li>
+                    <img src="images/partner-bg.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/partner-bg.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/partner-bg.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(".picMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:1,interTime:50});
+    </script>
+</div>
+<!--合作客户 end-->
+
+<!--联系我们 begin-->
+<div class="contact">
+    <div class="contact-container">
+        <h2><span>联系我们</span></h2>
+        <p><span>河北省保定市裕华路裕华金街A-527</span></p>
+        <hr>
+    </div>
+
+    <div class="">
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
+</div>
+<!--联系我们 end-->
+
 <script>
     $(function () {
-        //创业推荐服务 动画
+        //动画
         //检测当前元素距离body上部的偏移量
         var server_h2Top = $('.server-container h2>span').offset().top,
             server_pTop = $('.server-container p>span').offset().top,
@@ -801,7 +847,11 @@
             flow_h2Top = $('.flow-container h2>span').offset().top,
             flow_pTop = $('.flow-container p>span').offset().top,
             info_h2Top = $('.info-container h2>span').offset().top,
-            info_pTop = $('.info-container p>span').offset().top;
+            info_pTop = $('.info-container p>span').offset().top,
+            partner_h2Top = $('.partner-container h2>span').offset().top,
+            partner_pTop = $('.partner-container p>span').offset().top,
+            contact_h2Top = $('.contact-container h2>span').offset().top,
+            contact_pTop = $('.contact-container p>span').offset().top;
 
             if($(window).scrollTop()>server_h2Top/3){
                 $('.server-container h2>span').animate({
@@ -847,6 +897,30 @@
         }
         if($(window).scrollTop()>info_pTop/2 +250){
             $('.info-container p>span').animate({
+                opacity:1,
+                marginTop:"-6px"
+            },600)
+        }
+        if($(window).scrollTop()>partner_h2Top/2+850){
+            $('.partner-container h2>span').animate({
+                opacity:1,
+                marginTop:"-20px"
+            },600)
+        }
+        if($(window).scrollTop()>partner_pTop/2+850){
+            $('.partner-container p>span').animate({
+                opacity:1,
+                marginTop:"-6px"
+            },600)
+        }
+        if($(window).scrollTop()>contact_h2Top/2+1050){
+            $('.contact-container h2>span').animate({
+                opacity:1,
+                marginTop:"-20px"
+            },600)
+        }
+        if($(window).scrollTop()>contact_pTop/2+1050){
+            $('.contact-container p>span').animate({
                 opacity:1,
                 marginTop:"-6px"
             },600)
@@ -901,6 +975,30 @@
                     marginTop:"-6px"
                 },600)
             }
+            if($(window).scrollTop()>partner_h2Top/2+850){
+                $('.partner-container h2>span').animate({
+                    opacity:1,
+                    marginTop:"-20px"
+                },600)
+            }
+            if($(window).scrollTop()>partner_pTop/2+850){
+                $('.partner-container p>span').animate({
+                    opacity:1,
+                    marginTop:"-6px"
+                },600)
+            }
+            if($(window).scrollTop()>contact_h2Top/2+1050){
+                $('.contact-container h2>span').animate({
+                    opacity:1,
+                    marginTop:"-20px"
+                },600)
+            }
+            if($(window).scrollTop()>contact_pTop/2+1050){
+                $('.contact-container p>span').animate({
+                    opacity:1,
+                    marginTop:"-6px"
+                },600)
+            }
 
         });
 
@@ -913,7 +1011,6 @@
             })
 
         });
-
 
 
     })

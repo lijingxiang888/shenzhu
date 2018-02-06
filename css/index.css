@@ -134,11 +134,12 @@ figure {
     height: 100%;
 }
 .top-box .top-box-right .contact-hide {
+    display: none;
     position: absolute;
     left: -23px;
     top: 31px;
     width: 130px;
-    height: 0;
+    height: 160px;
     padding: 15px 15px 5px 15px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -160,7 +161,6 @@ figure {
 }
 .top-box .top-box-right li:hover .contact-hide {
     display: block;
-    height: 160px;
     opacity: 1;
     filter:alpha(opacity=1);
 }
@@ -888,4 +888,131 @@ nav .navbar-container {
 .info-list li > div:first-child > p:first-child {
     margin-top: 10px;
     font-size: 28px;
+}
+
+/*合作伙伴*/
+.partner {
+    position: relative;
+    width: 100%;
+}
+.partner .partner-container {
+    width: 1170px;
+    height: 508px;
+    margin: 0 auto;
+    padding: 70px 0;
+    box-sizing: border-box;
+}
+.partner .partner-container > h2 {
+    height: 40px;
+    position: relative;
+    font-size: 30px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.partner .partner-container > h2 > span {
+    opacity: 0;
+    position: absolute;
+    margin-left: -105px;
+    margin-top: -60px;
+    left: 50%;
+    top: 50%;
+}
+.partner .partner-container > p {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #666;
+}
+.partner .partner-container > p > span {
+    opacity: 0;
+    position: absolute;
+    margin-left: -99px;
+    margin-top: 18px;
+    left: 50%;
+    top: 50%;
+}
+.partner .partner-container > figure {
+    margin-top: 70px;
+    -webkit-box-shadow: rgba(0,0,0,0.1) 0 0 5px;
+    box-shadow: rgba(0,0,0,0.1) 0 0 5px;
+    background-color: #fff;
+}
+.partner .partner-container > figure img {
+    display: block;
+    margin: 0 auto;
+}
+.partner .partner-bg {
+    position: absolute;
+    width: 100%;
+    height: 508px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.partner .partner-bg ul {
+    width: 100%;
+    background-color: #f7f8fa;
+}
+.partner .partner-bg ul li {
+    float: none;
+    width: 100%;
+    height: 508px;
+
+}
+.partner .partner-bg ul li img {
+    width: 100%;
+    height: 100%;
+}
+/*联系我们*/
+.contact {
+    width: 100%;
+    background-color: #4a4e53;
+    color: #ccc;
+}
+.contact .contact-container {
+    width: 1170px;
+    height: 513px;
+    margin: 0 auto;
+    padding: 70px 0;
+    box-sizing: border-box;
+}
+.contact .contact-container > h2 {
+    height: 40px;
+    position: relative;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact .contact-container > h2 > span {
+    /*opacity: 0;*/
+    position: absolute;
+    margin-left: -60px;
+    margin-top: -60px;
+    left: 50%;
+    top: 50%;
+}
+.contact .contact-container > p {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+.contact .contact-container > p > span {
+    opacity: 0;
+    position: absolute;
+    margin-left: -111px;
+    margin-top: 18px;
+    left: 50%;
+    top: 50%;
+    font-size: 14px;
+}
+.contact .contact-container > hr {
+    width: 100%;
+    height: 1px;
+    margin-top: 60px;
+    background-color: #63686e;
 }
