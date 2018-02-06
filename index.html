@@ -722,7 +722,8 @@
 <div class="info">
     <div class="info-container">
         <h2><span>了解行业资讯</span></h2>
-        <p style="text-align: right"><span>这里会有您在创业过程中遇到的问题和知识</span><a href="javascript:;">了解更多</a></p>
+        <p><span>这里会有您在创业过程中遇到的问题和知识</span></p>
+        <a class="more" href="javascript:;">了解更多</a>
         <ul class="info-list clear">
             <li>
                 <div>
@@ -869,185 +870,13 @@
 </div>
 <!--footer end-->
 
-<script>
-    $(function () {
-        //动画
-        //检测当前元素距离body上部的偏移量
-        var server_h2Top = $('.server-container h2>span').offset().top,
-            server_pTop = $('.server-container p>span').offset().top,
-            team_h2Top = $('.team-container h2>span').offset().top,
-            team_pTop = $('.team-container p>span').offset().top,
-            flow_h2Top = $('.flow-container h2>span').offset().top,
-            flow_pTop = $('.flow-container p>span').offset().top,
-            info_h2Top = $('.info-container h2>span').offset().top,
-            info_pTop = $('.info-container p>span').offset().top,
-            partner_h2Top = $('.partner-container h2>span').offset().top,
-            partner_pTop = $('.partner-container p>span').offset().top,
-            contact_h2Top = $('.contact-container h2>span').offset().top,
-            contact_pTop = $('.contact-container p>span').offset().top;
+<!--回到顶部 begin-->
+<div class="back">
+    <span class="icon_arrowup"></span>
+</div>
+<!--回到顶部 end-->
 
-            if($(window).scrollTop()>server_h2Top/3){
-                $('.server-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>server_pTop/3){
-                $('.server-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>team_h2Top/2 +250){
-                $('.team-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>team_pTop/2 +250){
-                $('.team-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>flow_h2Top/2 +250){
-                $('.flow-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>flow_pTop/2 +250){
-                $('.flow-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-        if($(window).scrollTop()>info_h2Top/2 +250){
-            $('.info-container h2>span').animate({
-                opacity:1,
-                marginTop:"-20px"
-            },600)
-        }
-        if($(window).scrollTop()>info_pTop/2 +250){
-            $('.info-container p>span').animate({
-                opacity:1,
-                marginTop:"-6px"
-            },600)
-        }
-        if($(window).scrollTop()>partner_h2Top/2+850){
-            $('.partner-container h2>span').animate({
-                opacity:1,
-                marginTop:"-20px"
-            },600)
-        }
-        if($(window).scrollTop()>partner_pTop/2+850){
-            $('.partner-container p>span').animate({
-                opacity:1,
-                marginTop:"-6px"
-            },600)
-        }
-        if($(window).scrollTop()>contact_h2Top/2+1250){
-            $('.contact-container h2>span').animate({
-                opacity:1,
-                marginTop:"-20px"
-            },600)
-        }
-        if($(window).scrollTop()>contact_pTop/2+1250){
-            $('.contact-container p>span').animate({
-                opacity:1,
-                marginTop:"-6px"
-            },600)
-        }
-
-        $(window).scroll(function () {
-            if($(window).scrollTop()>server_h2Top/3){
-                $('.server-container h2>span').animate({
-                   opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>server_pTop/3){
-                $('.server-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>team_h2Top/2 +250){
-                $('.team-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>team_pTop/2 +250){
-                $('.team-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>flow_h2Top/2 +450){
-                $('.flow-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>flow_pTop/2 +450){
-                $('.flow-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>info_h2Top/2+650){
-                $('.info-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>info_pTop/2+650){
-                $('.info-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>partner_h2Top/2+850){
-                $('.partner-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>partner_pTop/2+850){
-                $('.partner-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-            if($(window).scrollTop()>contact_h2Top/2+1250){
-                $('.contact-container h2>span').animate({
-                    opacity:1,
-                    marginTop:"-20px"
-                },600)
-            }
-            if($(window).scrollTop()>contact_pTop/2+1250){
-                $('.contact-container p>span').animate({
-                    opacity:1,
-                    marginTop:"-6px"
-                },600)
-            }
-
-        });
-
-        //服务导航 动画
-        $('.server-nav li').click(function () {
-            var $liIndex = $(this).index();
-            $(this).addClass('active1').siblings().removeClass('active1');
-            $(this).parent().next().children().each(function (index,item) {
-                index == $liIndex? $(item).addClass('active2'):$(item).removeClass('active2')
-            })
-
-        });
-
-
-    })
-</script>
+<script src="js/index.js"></script>
 <script type="text/javascript">
     //百度统计代码
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

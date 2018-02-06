@@ -44,6 +44,10 @@
 .server .icon_jiahao:before {
     content: '\e612';
 }
+.back .icon_arrowup:before {
+    content: '\e62c';
+}
+
 body {
     position: relative;
     font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
@@ -768,6 +772,9 @@ nav .navbar-container {
     left: 50%;
     top: 50%;
 }
+.flow-container .flow-pic {
+    opacity: 0;
+}
 .flow-container > ul {
     margin-top: 26px;
     box-sizing: border-box;
@@ -835,6 +842,27 @@ nav .navbar-container {
     margin-top: 18px;
     left: 50%;
     top: 50%;
+}
+.info .info-container .more {
+    float: right;
+    display: block;
+    width: 90px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.info .info-container .more:hover {
+    color: #fff;
+    background-color: #FFA500;
+    border: 0;
+
 }
 .info-container .info-list {
     margin-top: 60px;
@@ -1089,4 +1117,28 @@ nav .navbar-container {
     font-size: 14px;
     text-align: center;
     color: #ccc;
+}
+
+/*回到顶部*/
+.back {
+    opacity: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    background-color: #62A8EA;
+    cursor: pointer;
+    z-index: 100;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.back.show {
+    opacity: 1;
+    bottom: 30px;
 }
