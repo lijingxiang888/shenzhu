@@ -969,15 +969,16 @@ nav .navbar-container {
 /*联系我们*/
 .contact {
     width: 100%;
+    height: 492px;
     background-color: #4a4e53;
     color: #ccc;
+    box-sizing: border-box;
 }
 .contact .contact-container {
     width: 1170px;
-    height: 513px;
     margin: 0 auto;
-    padding: 70px 0;
-    box-sizing: border-box;
+    padding-top: 70px;
+    padding-bottom: 20px;
 }
 .contact .contact-container > h2 {
     height: 40px;
@@ -988,7 +989,7 @@ nav .navbar-container {
     text-align: center;
 }
 .contact .contact-container > h2 > span {
-    /*opacity: 0;*/
+    opacity: 0;
     position: absolute;
     margin-left: -60px;
     margin-top: -60px;
@@ -1010,9 +1011,82 @@ nav .navbar-container {
     top: 50%;
     font-size: 14px;
 }
-.contact .contact-container > hr {
+.contact .contact-container > hr,
+.contact .contact-txt > hr
+{
     width: 100%;
     height: 1px;
     margin-top: 60px;
     background-color: #63686e;
+}
+.contact .contact-txt {
+    width: 1170px;
+    height: 255px;
+    margin: 0 auto;
+}
+.contact .contact-txt .contact-txt-left {
+    float: left;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+.contact .contact-txt .contact-txt-left > p {
+    line-height: 20px;
+    text-align: justify;
+    text-indent: 24px;
+}
+.contact .contact-txt .contact-txt-right {
+    float: right;
+    width: 24%;
+    height: 100%;
+    overflow: hidden;
+}
+.contact .contact-txt .contact-txt-right >p:nth-child(1) {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 43px;
+    font-weight: bolder;
+}
+.contact .contact-txt .contact-txt-right >p:nth-child(2) {
+    text-align: right;
+    margin-bottom: 10px;
+}
+.contact .contact-txt .contact-txt-right >p:nth-child(3) {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.contact .contact-txt .contact-txt-right >p:nth-child(5) {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.contact .contact-txt > p {
+    height: 21px;
+    line-height: 21px;
+    margin-top: 10px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.contact .contact-txt > p > a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ccc;
+}
+
+/*底部*/
+.footer {
+    width: 100%;
+}
+.footer .footer-container {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.footer .footer-container > p {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: #ccc;
 }
