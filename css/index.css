@@ -263,7 +263,7 @@ nav .navbar-container {
     position: absolute;
     left: 240px;
     top: 0;
-    width: 938px;
+    width: 696px;
     max-height: 433px;
     border: 1px solid #1786ca;
     border-left: none;
@@ -282,13 +282,11 @@ nav .navbar-container {
 
 }
 .sn-box-right .main {
-    width: 938px;
     min-height: 428px;
     text-align: left;
     overflow: hidden;
 }
 .sn-box-right .main .main-left {
-    float: left;
     width: 660px;
     padding: 0 21px 0 14px;
     height: 428px;
@@ -332,35 +330,7 @@ nav .navbar-container {
 .sn-box-right .main .main-left .sec-text li a:hover {
     color: #62a8ea;
 }
-.sn-box-right .main .main-right {
-    float: right;
-    width: 242px;
-    height: 428px;
-    background-color: #fff;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.sn-box-right .main .main-right .sec-pic {
-    width: 100%;
-    height: 211px;
-    border-bottom: 1px solid #eee;
 
-}
-.sn-box-right .main .main-right .sec-pic a {
-    display: block;
-    width: 100%;
-    height: 200px;
-}
-.sn-box-right .main .main-right .sec-pic a img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: scale-down;
-    object-fit: scale-down;
-}
 .tool-box .nav-list {
     float: left;
     height: 48px;
@@ -377,16 +347,106 @@ nav .navbar-container {
 .tool-box .nav-list > li a:hover {
     color: #62a8ea;
 }
-.banner {
+.sign-in {
+    position: absolute;
+    width: 260px;
+    right: 30px;
+    top: 190px;
+    background-color: rgba(255,255,255,0.78);
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+.sign-in > p {
+    height: 42px;
+    line-height: 42px;
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+}
+.sign-in form input[type='text'],
+.sign-in form input[type='password']
+{
+    display: block;
+    width: 176px;
+    height: 30px;
+    margin: 10px auto;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #666;
+    border-radius: 50px;
+}
+.sign-in form input[type='submit'] {
+    display: block;
+    width: 200px;
+    height: 33px;
+    margin: 20px auto;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 50px;
+    background-color: #055bc3;
+    cursor: pointer;
+}
+.sign-in form input[type='checkbox'] {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 33px;
+    vertical-align: middle;
+}
+.sign-in form > a {
+    margin-left: 76px;
+}
+
+
+
+
+#banner {
     width: 100%;
     position: absolute;
     left: 0;
     top: 165px;
     z-index: -1;
 }
-.banner .banner-wrap {
+#banner .banner-wrap {
     width: 100%;
     height: 431px;
+}
+#banner .banner-wrap img {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#banner .banner-wrap img:first-child {
+    display: block;
+}
+#focus {
+    width: 75px;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .5);
+    padding: 5px 0 5px 5px;
+    border-radius: 20px;
+    z-index: 20;
+}
+#focus li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#focus li.selected {
+    background: #ffaa2a;
 }
 
 /*创业必须的服务*/
@@ -862,23 +922,20 @@ nav .navbar-container {
 .info .info-container .more {
     float: right;
     display: block;
-    width: 90px;
+    width: 116px;
     line-height: 30px;
     height: 30px;
-    font-size: 16px;
     text-align: center;
-    border: 1px solid #333;
     border-radius: 5px;
+    background-color: #62a8ea;
+    color: #fff;
     -moz-transition: all .25s ease-out;
     -webkit-transition: all .25s ease-out;
     -o-transition: all .25s ease-out;
     transition: all .25s ease-out;
 }
 .info .info-container .more:hover {
-    color: #fff;
     background-color: #FFA500;
-    border: 0;
-
 }
 .info-container .info-list {
     margin-top: 60px;

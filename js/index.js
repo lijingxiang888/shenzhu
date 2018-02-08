@@ -198,3 +198,42 @@ $(function () {
 
 
 })
+
+$(function () {
+    var $banner = $('#banner'),
+        $wrap = $('#banner .banner-wrap'),
+        $focusList = $('#focus li'),
+        $oImgs = $('#banner img');
+    $banner.step = 0;
+    $banner.timer = setInterval(autoMove,3000);
+    $banner.lastInd = $oImgs.last().index();
+
+    //轮播方法
+    function autoMove(n) {
+        !isNaN(n) ? $banner.step = n : $banner.step++;
+
+        $banner.step > $banner.lastInd ? $banner.step = 0 : null;
+
+        $oImgs.stop().eq($banner.step).fadeIn(300).siblings().fadeOut();
+        
+        $focusList.eq($banner.step).addClass('selected').siblings().removeClass('selected');
+    }
+    
+    //移入移出动画
+    // $banner.hover(function () {
+    //     clearInterval($banner.timer);
+    // },function () {
+    //     $banner.timer = setInterval(autoMove,3000);
+    // });
+    
+    //绑定焦点点击事件
+    // function bindSelectEvent() {
+    //     $focusList.each(function () {
+    //         $(this).click(function () {
+    //             autoMove($(this).index());
+    //         })
+    //     })
+    // }
+    // bindSelectEvent();
+
+});
