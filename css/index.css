@@ -88,7 +88,13 @@ figure {
 }
 .top-box .top-box-left {
     float: left;
+}
 
+.top-box .top-box-left > span:first-child {
+    margin-left: 20px;
+}
+.top-box .top-box-left > span:hover > a {
+    color: #62a8ea;
 }
 .top-box .top-box-right {
     float: right;
@@ -143,8 +149,8 @@ figure {
     left: -23px;
     top: 31px;
     width: 130px;
-    height: 160px;
-    padding: 15px 15px 5px 15px;
+    height: 150px;
+    padding: 10px 15px 0px 15px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -357,12 +363,20 @@ nav .navbar-container {
     box-sizing: border-box;
 
 }
-.sign-in > p {
+.sign-in > p:first-child {
     height: 42px;
     line-height: 42px;
     color: #666;
     font-size: 18px;
     text-align: center;
+}
+.sign-in > p:last-child {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #666;
+}
+.sign-in > p:last-child > a {
+    color: #055bc3;
 }
 .sign-in form input[type='text'],
 .sign-in form input[type='password']
@@ -380,7 +394,7 @@ nav .navbar-container {
     display: block;
     width: 200px;
     height: 33px;
-    margin: 20px auto;
+    margin: 20px auto 10px;
     color: #fff;
     border: 1px solid #666;
     border-radius: 50px;
