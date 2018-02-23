@@ -12,8 +12,8 @@ $(function () {
         partner_h2Top = $('.partner-container h2>span').offset().top,
         partner_pTop = $('.partner-container p>span').offset().top,
         contact_h2Top = $('.contact-container h2>span').offset().top,
-        contact_pTop = $('.contact-container p>span').offset().top,
-        back_Top = $('.back').offset().top;
+        contact_pTop = $('.contact-container p>span').offset().top;
+
 
     if($(window).scrollTop()>server_h2Top/3){
         $('.server-container h2>span').animate({
