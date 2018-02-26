@@ -47,6 +47,12 @@
 .back .icon_arrowup:before {
     content: '\e62c';
 }
+.icon_yanjing:before {
+    content: '\e67b';
+}
+.icon_shijian:before {
+    content: '\e675';
+}
 
 body {
     position: relative;

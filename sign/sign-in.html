@@ -68,6 +68,7 @@
             outline: none;
             border: none;
             background-color: #5e7387;
+            cursor: pointer;
         }
         .container form p:last-child {
             width: 100%;
@@ -498,12 +499,12 @@
 <!--main begin-->
 <div class="main-box">
     <div class="container">
-        <form action="" method="post">
-            <input type="text" placeholder="用户名/邮箱/手机">
-            <input type="text" placeholder="密码">
+        <form action="" method="post" >
+            <input type="text" placeholder="用户名/邮箱/手机" required>
+            <input type="password" placeholder="密码" required>
             <p><a href="javascript:;">忘记密码？</a></p>
-            <button>登录</button>
-            <p><a href="javascript:;">没有帐号？现在去注册</a></p>
+            <button type="submit">登录</button>
+            <p><a href="sign-up.html">没有帐号？现在去注册</a></p>
         </form>
     </div>
 </div>
