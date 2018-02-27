@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>商标复审-商标办理-商标服务-申注网</title>
+    <title>客户案例-申注网</title>
     <meta name="renderer" content="webkit">
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,7 +13,161 @@
     <link href="../images/shenzhuwang.ico" rel="shortcut icon">
     <link rel="stylesheet" href="../css/reset.min.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/shangbiaofuwu/main.css">
+    <style>
+        .main {
+            width: 100%;
+        }
+        .main > figure img {
+            width: 100%;
+            height: 100%;
+        }
+        .main > p {
+            height: 45px;
+            line-height: 45px;
+            padding: 0 96px;
+            margin: 10px auto;
+            font-size: 14px;
+            background-color: #f2f2f2;
+        }
+        .main > p a {
+            color: #62a8ea;
+        }
+        .main .container {
+            width: 1170px;
+            margin: 20px auto;
+            margin-bottom: 0;
+            padding: 30px 0;
+        }
+        .main .container ul li {
+            position: relative;
+            float: left;
+            width: 24%;
+            margin: 0 5px 20px 5px;
+            -moz-transition: all .25s ease-out;
+            -webkit-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+        .main .container ul li:hover {
+            -moz-transform: translateY(-3px);
+            -webkit-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+            -o-transform: translateY(-3px);
+            transform: translateY(-3px);
+            -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.15)
+        }
+        .main .container ul li figure {
+            height: 184px;
+        }
+        .main .container ul li figure img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .main .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 53px 0;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.2);
+            box-sizing: border-box;
+        }
+        .main .overlay h2 {
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+            color: #fff;
+            opacity: .9;
+            -webkit-filter:opacity(90%);
+            filter: opacity(90%);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: clip;
+        }
+        .main .overlay p {
+            margin-top: 18px;
+            text-align: center;
+        }
+        .main .overlay p a {
+            display: inline-block;
+            width: 58px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 14px;
+            border: 1px solid #fff;
+            color: #fff;
+            opacity: .9;
+            -webkit-filter:opacity(90%);
+            filter: opacity(90%);
+            -moz-transition: all .25s ease-out;
+            -webkit-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+        .main .overlay p a:hover {
+            color: #666;
+            background-color: #fff;
+        }
+        .main .container .pagination {
+            text-align: center;
+            word-spacing: -3px;
+        }
+        .main .container .pagination span {
+            display: inline-block;
+            width: 70px;
+            height: 39px;
+            line-height: 39px;
+            font-size: 16px;
+            text-align: center;
+            color: #76838f;
+            border: 1px solid #e4eaec;
+            cursor: pointer;
+            -moz-transition: all .25s ease-out;
+            -webkit-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+        .main .container .pagination span:first-child {
+            border-right: 0;
+        }
+        .main .container .pagination span:nth-child(3) {
+            border-left: 0;
+        }
+        .main .container .pagination span:hover {
+            color: #fff;
+            background-color: #999;
+        }
+        .main .container .pagination ul {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .main .container .pagination li {
+            float: left;
+            width: 39px;
+            height: 39px;
+            line-height: 39px;
+            margin: 0;
+            text-align: center;
+            border: 1px solid #e4eaec;
+            -moz-transition: all .25s ease-out;
+            -webkit-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+        .main .container .pagination li a {
+            display: block;
+        }
+        .main .container .pagination li:hover {
+            background-color: #055bc3;
+        }
+        .main .container .pagination li:hover a {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <!--[if lte IE 8]>
@@ -30,8 +184,8 @@
 <div class="header">
     <div class="top-box clear">
         <div class="top-box-left">
-            您好！请<span><a href="javascript:;">登 录</a></span>/
-            <span><a href="javascript:;">注 册</a></span>
+            您好！请<span><a href="../sign/sign-in.html">登 录</a></span>/
+            <span><a href="../sign/sign-up.html">注 册</a></span>
         </div>
         <div class="top-box-right">
             <ul class="clear">
@@ -83,7 +237,7 @@
                                 <div class="sn-box-left">
                                     <p>商标服务 <i class="icon_arrowright"></i></p>
                                     <p>
-                                        <a class="fontw" href="javascript:;">商标办理</a>
+                                        <a class="fontw" href="../shangbiaofuwu/shangbiaobanli.html">商标办理</a>
                                         <a class="fontw" href="javascript:;">商标周边</a>
                                     </p>
                                     <div class="sn-box-right">
@@ -98,9 +252,9 @@
                                                     </span>
                                                     <div class="sec-text">
                                                         <ul class="clear">
-                                                            <li><a href="javascript:;">普通商标注册</a></li>
-                                                            <li><a href="javascript:;">商标复审</a></li>
-                                                            <li><a href="javascript:;">商标变通加急</a></li>
+                                                            <li><a href="../shangbiaofuwu/putongshangbiaozhuce.html">普通商标注册</a></li>
+                                                            <li><a href="../shangbiaofuwu/shangbiaofushen.html">商标复审</a></li>
+                                                            <li><a href="../shangbiaofuwu/shangbiaobiantongjiaji.html">商标变通加急</a></li>
                                                             <li><a href="javascript:;">国际商标</a></li>
                                                             <li><a href="javascript:;">集体商标注册</a></li>
                                                             <li><a href="javascript:;">证明商标注册</a></li>
@@ -416,7 +570,7 @@
                     <li><a href="javascript:;">高新培育</a></li>
                     <li><a href="javascript:;">商标注册</a></li>
                     <li><a href="javascript:;">专利申请</a></li>
-                    <li><a href="../kehuanli/kehuanli.html">客户案例</a></li>
+                    <li><a href="kehuanli.html">客户案例</a></li>
                 </ul>
             </div>
         </div>
@@ -426,111 +580,144 @@
 
 <!--main begin-->
 <div class="main">
+    <figure>
+        <img src="../images/fuwujigou.jpg" alt="专业知识产权服务机构">
+    </figure>
     <p>
-        <span><a href="../index.html"> 网站首页 &nbsp;/</a></span>
-        <span><a href="shangbiaobanli.html">&nbsp;商标办理&nbsp; /</a></span>
-        <span><a href="shangbiaofushen.html"> 商标复审</a></span>
+        <span><a href="../index.html">网站首页 &nbsp;/</a></span>
+        <span><a href="kehuanli.html">&nbsp;客户案例&nbsp;</a></span>
     </p>
-    <div class="container clear">
-        <figure>
-            <img src="../images/shangbiaofuwu2.jpg" alt="">
-        </figure>
-        <div class="product-intro">
-            <h2>商标复审</h2>
-            <p>
-                商标驳回复审是指国家商标局以申请注册的商标违反《商标法》的有关规定为由驳回申请人的注册申请，申请人不服国家商标局 的驳回决定，在法定的期限内向商标评审委员会申请复审，在复审中陈述不服国家商标局驳回决定的理由 ， 请求商标评审委员会准予申请商标初审公告的程序。
-            </p>
-            <p>价格：<span>￥2500.00</span>元</p>
-            <p>
-                <a href="javascript:;">立即购买</a>
-                <a href="javascript:;">加入购物车</a>
-                <a href="javascript:;">选择专业顾问</a>
-            </p>
-        </div>
-    </div>
-    <div class="product-box">
-        <div class="product-detail clear">
-            <section>
-                <p>详细信息</p>
-                <hr>
-                <div class="product-txt">
-                    <h2>商标复审流程</h2>
-                    <h3>1、案件评估分析，确定最佳保护方案</h3>
-                    <h3>2、法务部处理并指导客户准备/完善相关资料</h3>
-                    <h3>3、客户确认并递交至国家商标局</h3>
-                    <h3>4、跟进受理、审查过程，并主动向客户反馈进度</h3>
-                    <h3>5、完成复审</h3>
-                    <h3>6、商标复审结果需要9个月左右的时间</h3>
+    <div class="container">
+        <ul class="clear">
+            <li>
+                <div class="overlay">
+                    <h2>中国航空工业集团</h2>
+                    <p><a href="javascript:;">浏览</a></p>
                 </div>
-                <div class="product-txt">
-                    <h2>商标价值</h2>
-                    <h3>1、市场扩充必备</h3>
-                    <p>是进驻大型卖场和超市的资格凭证，是入驻大型电商平台的必备条件，在各种媒体上做广告宣传都需要出具相关的品牌的商标注册证明文件。</p>
-                    <h3>2、企业品牌卫士</h3>
-                    <p>只有核准注册后的商标才能打上&reg;标记，这是全国范围内唯一使用受法律保护的证明，如遇他人仿冒可通过法律手段维权，获得经济赔偿。</p>
-                    <h3>3、无形的资产</h3>
-                    <p>商标的评估价值是企业总资产额度的一部分，随企业的知名度而提高，还可作为无形资产进行转让、继承、抵押贷款等，开启财富之门。</p>
-                    <h3>4、树立品牌形象</h3>
-                    <p>区别于其他同类商品独家专有，在赢得消费者信用的同时，树立家用户晓的品牌形象，不同商标针对不同群体，使企业品牌深入人心。</p>
+                <figure>
+                    <img src="../images/zhonghang.jpg" alt="中国航空工业集团">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>长城汽车</h2>
+                    <p><a href="javascript:;">浏览</a></p>
                 </div>
-                <div class="product-txt">
-                    <h2>商标未注册的四大危害</h2>
-                    <h3>1、使用人不享有商标专用权</h3>
-                    <p>你使用的商标别人也能使用，使标明商品来源的基本作用受到影响，导致商标代表商品质量和信誉的作用大打折扣。</p>
-                    <h3>2、存在商标被抢注的风险</h3>
-                    <p>根据《商标法》相关规定，采用申请在先原则，一旦他人抢先注册，该商标最先使用人反而不能再使用该商标。</p>
-                    <h3>3、侵犯他人权利</h3>
-                    <p>未注册商标有可能与使用在相同或类似商品上的已注册商标相同或近似，从而发生侵权行为。</p>
-                    <h3>4、树立品牌形象</h3>
-                    <p>未注册商标使用人不享有商标专有权，不受法律保护，不能形成工业产权，因此也不能成为使用人的无形资产。</p>
+                <figure>
+                    <img src="../images/changchengqiche.jpg" alt="长城汽车股份有限公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>中国乐凯集团</h2>
+                    <p><a href="javascript:;">浏览</a></p>
                 </div>
-                <div class="product-txt">
-                    <h2>申请商标复审的重要性</h2>
-                    <h3>1、增加成功机会</h3>
-                    <p>申请商标驳回复审就有机会注册成功。</p>
-                    <h3>2、放弃意味失败</h3>
-                    <p>放弃复审申请，商标将归于无效，一切努力白费。</p>
-                    <h3>3、快速获得证书</h3>
-                    <p>有些商标复审很容易成功，可快速获得《商标注册证》。</p>
+                <figure>
+                    <img src="../images/lekai.jpg" alt="中国乐凯集团有限公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>风帆股份有限公司</h2>
+                    <p><a href="javascript:;">浏览</a></p>
                 </div>
-            </section>
-            <aside>
-                <p>热门推荐</p>
-                <ul>
-                    <li>
-                        <figure>
-                            <a href="javascript:;">
-                                <img src="../images/gaoxinpeiyu.jpg" alt="">
-                            </a>
-                        </figure>
-                        <p><a href="javascript:;">高新培育</a></p>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="javascript:;">
-                                <img src="../images/gaoxinpeiyu.jpg" alt="">
-                            </a>
-                        </figure>
-                        <p><a href="javascript:;">专利导航</a></p>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="javascript:;">
-                                <img src="../images/gaoxinpeiyu.jpg" alt="">
-                            </a>
-                        </figure>
-                        <p><a href="javascript:;">普通商标注册</a></p>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="javascript:;">
-                                <img src="../images/gaoxinpeiyu.jpg" alt="">
-                            </a>
-                        </figure>
-                        <p><a href="javascript:;">融资上市</a></p>
-                    </li>
-                </ul>
-            </aside>
+                <figure>
+                    <img src="../images/fengfan.jpg" alt="风帆股份有限公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>英利集团有限公司</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/yingli.jpg" alt="英利集团有限公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>晨阳水漆</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/chenyangshuiqi.jpg" alt="河北晨阳工贸集团">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>河北盛伟基业集团</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/hebeiweisheng.jpg" alt="河北盛伟基业集团">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>河北翔锐医疗器械公司</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/xiangruikeji.jpg" alt="河北翔锐医疗器械公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>中铁五局集团有限公司</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/zhongtiewuju.jpg" alt="中铁五局集团有限公司">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>同济堂</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/tongjitang.jpg" alt="同济堂">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>贵州师范大学</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/guizhoushifan.jpg" alt="贵州师范大学">
+                </figure>
+
+            </li>
+            <li>
+                <div class="overlay">
+                    <h2>贵州乌江机电设备公司</h2>
+                    <p><a href="javascript:;">浏览</a></p>
+                </div>
+                <figure>
+                    <img src="../images/wujiangjidian.jpg" alt="贵州乌江机电设备公司">
+                </figure>
+
+            </li>
+        </ul>
+        <div class="pagination">
+            <span>上一页</span>
+            <ul class="clear">
+                <li><a href="javascript:;">1</a></li>
+                <li><a href="javascript:;">2</a></li>
+                <li><a href="javascript:;">3</a></li>
+            </ul>
+            <span>下一页</span>
         </div>
     </div>
 </div>
