@@ -34,12 +34,25 @@
         <div class="top-box-right">
             <ul class="clear">
                 <li>
-                    <span class="icon_phone"></span>
-                    <a href="javascript:;">购物车</a>
-                    <span class="icon_arrowdown"></span>
-                    <div class="contact-hide">
-                        <p style="font-weight:700;color:#ff7f00;">商品1</p>
-                        <p style="font-weight:700;color:#ff7f00;">商品2</p>
+
+                    <a href="javascript:;">我的购物车 <i class="product-num"></i></a>
+                    <div class="car-hide">
+                        <p>
+                            <a href="shangbiaofuwu/putongshangbiaozhuce.html">普通商标注册 ￥<span class="product-price">800.00</span></a>
+                            <span>删除</span>
+                        </p>
+                        <p>
+                            <a href="shangbiaofuwu/shangbiaofushen.html">商标复审 ￥<span class="product-price">2500.00</span></a>
+                            <span>删除</span>
+                        </p>
+                        <p>
+                            <a href="shangbiaofuwu/shangbiaobiantongjiaji.html">商标变通加急 ￥<span class="product-price">2000.00</span></a>
+                            <span>删除</span>
+                        </p>
+                        <div class="clear">
+                            <p>共<span class="product-num"></span>件商品，共计￥<span class="cash-total"></span></p>
+                            <a href="javascript:;">去购物车</a>
+                        </div>
                     </div>
                 </li>
                 <li>
@@ -1045,5 +1058,48 @@
 <!--回到顶部 end-->
 
 <script src="js/index.js"></script>
+<script>
+    $(function () {
+        var $carNum = $('.car-hide').children('p').length,//得到初始商品数目
+            $productNum = $('.product-num');
+            $productNum.text($carNum);//设置初始值
+        var cashTotal = $('.cash-total');
+        var arr = [];
+        Array.prototype.sum = function (){
+            var result = 0;
+            for(var i = 0; i < this.length; i++) {
+                result += this[i];
+            }
+            return result;
+        };
+
+        //得到total的初始值
+        $('.car-hide > p').each(function () {
+            var $productPriceVal = parseFloat($(this).find('.product-price').text());
+            //console.log($productPriceVal)
+            arr.push($productPriceVal);
+        });
+        cashTotal.text(arr.sum());
+        arr = []; //得到总计后清空 arr，防止下次点击后累加
+
+        $('.car-hide > p > span').click(function () {
+            //每次点击移除当前的商品并 数量--
+            $(this).parent().remove();
+            $carNum--;
+            $productNum.text($carNum);//从新赋值
+
+            //每次点击重新循环购物车列表，得到现有商品的单价
+            $('.car-hide > p').each(function () {
+                var $productPriceVal = parseFloat($(this).find('.product-price').text());
+                arr.push($productPriceVal);
+            });
+
+            console.log(arr.sum());
+            cashTotal.text(arr.sum());
+            arr = [] //得到总计后清空 arr，防止下次点击后累加
+        });
+
+    });
+</script>
 </body>
 </html>
