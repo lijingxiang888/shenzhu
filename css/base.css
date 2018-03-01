@@ -109,10 +109,23 @@ figure {
     position: relative;
     float: left;
     margin-right: 30px;
+    color: #666;
     -moz-transition: all .25s ease-out;
     -webkit-transition: all .25s ease-out;
     -o-transition: all .25s ease-out;
     transition: all .25s ease-out;
+}
+.top-box .top-box-right li:first-child i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    font-style: normal;
+    color: #fff;
+    background-color: #ff7f00;
+    vertical-align: text-bottom;
 }
 .top-box .top-box-right li:hover {
     color: #55acee;
@@ -120,21 +133,92 @@ figure {
 .top-box .top-box-right li:hover a {
     color: #55acee;
 }
-.top-box .top-box-right li:hover .weixin-hide {
-    display: block;
-    height: 150px;
+.top-box .top-box-right li .icon_weixin {
+    font-size: 16px;
+}
+.top-box .top-box-right .car-hide {
+    position: absolute;
+    left: -23px;
+    top: 31px;
+    width: 320px;
+    min-height: 50px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 10;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    visibility: hidden;
+    border: 1px solid #e4eaec;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.top-box .top-box-right .car-hide > p {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+}
+.top-box .top-box-right .car-hide > div {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #999;
+    background-color: #fff;
+}
+.top-box .top-box-right .car-hide > div p {
+    display: inline-block;
+    margin-right: 48px;
+}
+.top-box .top-box-right .car-hide > div span {
+    color: #333;
+}
+.top-box .top-box-right .car-hide > div a {
+    display: inline-block;
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #e4393c;
+
+}
+.top-box .top-box-right .car-hide > p > a {
+    color:#ff7f00;
+}
+.top-box .top-box-right .car-hide > p >span {
+    float: right;
+    color: #666;
+    cursor: pointer;
+}
+.top-box .top-box-right .car-hide > p >span:hover {
+    color: #c81623;
+}
+.top-box .top-box-right li:hover .car-hide {
     opacity: 1;
     filter:alpha(opacity=1);
+    visibility: visible;
 }
 .top-box .top-box-right .weixin-hide {
     position: absolute;
     width: 150px;
-    height: 0;
+    height: 150px;
     left: -28px;
     top: 32px;
     z-index: 10;
     opacity: 0;
     filter:alpha(opacity=0);
+    visibility: hidden;
     border: 1px solid #e4eaec;
     border-radius: 4px;
     -webkit-box-shadow: 0 2px 6px rgba(0,0,0,.05);
@@ -149,14 +233,19 @@ figure {
     width: 100%;
     height: 100%;
 }
+.top-box .top-box-right li:hover .weixin-hide {
+    height: 150px;
+    opacity: 1;
+    filter:alpha(opacity=1);
+    visibility: visible;
+}
 .top-box .top-box-right .contact-hide {
-    display: none;
     position: absolute;
     left: -23px;
     top: 31px;
     width: 130px;
     height: 150px;
-    padding: 10px 15px 0px 15px;
+    padding: 10px 15px 0 15px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -165,6 +254,7 @@ figure {
     z-index: 10;
     opacity: 0;
     filter:alpha(opacity=0);
+    visibility: hidden;
     border: 1px solid #e4eaec;
     border-radius: 4px;
     background-color: #fff;
@@ -176,9 +266,9 @@ figure {
     transition: all .25s ease-out;
 }
 .top-box .top-box-right li:hover .contact-hide {
-    display: block;
     opacity: 1;
     filter:alpha(opacity=1);
+    visibility: visible;
 }
 
 /*导航*/
@@ -511,3 +601,6 @@ nav .navbar-container {
     text-align: center;
     color: #ccc;
 }
+
+
+
