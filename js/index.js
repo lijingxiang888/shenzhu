@@ -197,7 +197,7 @@ $(function () {
     });
 
 
-})
+});
 
 $(function () {
     var $banner = $('#banner'),
@@ -236,4 +236,23 @@ $(function () {
     // }
     // bindSelectEvent();
 
+});
+
+$(function () {
+    var $input = $('.sign-in input');
+
+    $input.focus(function () {
+        var $Color = $(this).css('color');
+        if ('rgb(152, 152, 152)' === $Color){
+            $(this).val('');
+            $(this).css({'color':'#000'})
+        }
+    });
+    $input.blur(function () {
+        if ($(this).val() === ''){
+            var $dataVal = $(this).attr('data-value');
+            $(this).css({'color':'#989898'});
+            $(this).val($dataVal);
+        }
+    })
 });

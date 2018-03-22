@@ -11,7 +11,6 @@
     <!--[if lt IE 9]>
     <script src="../js/html5.min.js"></script>
     <![endif]-->
-    <script src="../js/jquery1.42.min.js"></script>
     <link href="../images/shenzhuwang.ico" rel="shortcut icon">
     <link rel="stylesheet" href="../css/reset.min.css">
     <link rel="stylesheet" href="../css/base.css">
@@ -53,6 +52,7 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+            color: #989898;
         }
         .container input:nth-child(6) {
             width: 200px;
@@ -506,18 +506,18 @@
 <div class="main-box">
     <div class="container">
         <form action="" method="post">
-            <input type="text" placeholder="请输入用户名" required>
-            <input type="password" placeholder="6-20位的密码" required>
-            <input type="password" placeholder="确认密码" required>
-            <input type="tel" placeholder="手机" required>
-            <input type="email" placeholder="邮箱" required>
+            <input type="text" value="请输入用户名" data-value="请输入用户名" required>
+            <input type="text" value="6-20位的密码" data-value="6-20位的密码" required>
+            <input type="text" value="确认密码" data-value="确认密码" required>
+            <input type="text" value="手机"data-value="手机" required>
+            <input type="text" value="邮箱" data-value="邮箱" required>
             <div class="clear">
-                <input type="text" placeholder="验证码" required>
+                <input type="text" value="验证码" data-value="验证码" required>
                 <span>
                     <img src="../images/entrance.jpg" alt="验证码">
                 </span>
             </div>
-            <button type="submit">立即注册</button>
+            <button type="button">立即注册</button>
             <p><a href="sign-in.html">已有帐号？</a></p>
         </form>
     </div>
@@ -578,7 +578,27 @@
     <span class="icon_arrowup"></span>
 </div>
 <!--回到顶部 end-->
-
+<script src="../js/jquery1.42.min.js"></script>
 <script src="../js/back_top.js"></script>
+<script>
+    $(function () {
+        var $input = $('.container input');
+
+        $input.focus(function () {
+            var $Color = $(this).css('color');
+            if ('rgb(152, 152, 152)' === $Color){
+                $(this).val('');
+                $(this).css({'color':'#000'})
+            }
+        });
+        $input.blur(function () {
+            if ($(this).val() === ''){
+                var $dataVal = $(this).attr('data-value');
+                $(this).css({'color':'#989898'});
+                $(this).val($dataVal);
+            }
+        })
+    });
+</script>
 </body>
 </html>

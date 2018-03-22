@@ -11,7 +11,6 @@
     <!--[if lt IE 9]>
     <script src="../js/html5.min.js"></script>
     <![endif]-->
-    <script src="../js/jquery1.42.min.js"></script>
     <link href="../images/shenzhuwang.ico" rel="shortcut icon">
     <link rel="stylesheet" href="../css/reset.min.css">
     <link rel="stylesheet" href="../css/base.css">
@@ -52,6 +51,7 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+            color: #989898;
         }
         .container form p:nth-child(3) {
             text-align: right;
@@ -502,10 +502,10 @@
 <div class="main-box">
     <div class="container">
         <form action="" method="post" >
-            <input type="text" placeholder="用户名/邮箱/手机" required>
-            <input type="password" placeholder="密码" required>
+            <input type="text" value="用户名/邮箱/手机" data-value="用户名/邮箱/手机" required>
+            <input type="text" value="密码" data-value="密码" required>
             <p><a href="javascript:;">忘记密码？</a></p>
-            <button type="submit">登录</button>
+            <button type="button">登录</button>
             <p><a href="sign-up.html">没有帐号？现在去注册</a></p>
         </form>
     </div>
@@ -566,7 +566,27 @@
     <span class="icon_arrowup"></span>
 </div>
 <!--回到顶部 end-->
-
+<script src="../js/jquery1.42.min.js"></script>
 <script src="../js/back_top.js"></script>
+<script>
+    $(function () {
+        var $input = $('.container input');
+
+        $input.focus(function () {
+            var $Color = $(this).css('color');
+            if ('rgb(152, 152, 152)' === $Color){
+                $(this).val('');
+                $(this).css({'color':'#000'})
+            }
+        });
+        $input.blur(function () {
+            if ($(this).val() === ''){
+                var $dataVal = $(this).attr('data-value');
+                $(this).css({'color':'#989898'});
+                $(this).val($dataVal);
+            }
+        })
+    });
+</script>
 </body>
 </html>
