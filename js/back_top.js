@@ -1,6 +1,6 @@
 $(function () {
-    var  contact_h2Top = $('.contact-container h2>span').offset().top,
-        contact_pTop = $('.contact-container p>span').offset().top;
+    var  contact_h2Top = $('.contact-container h2 > span').offset().top,
+        contact_pTop = $('.contact-container p > span').offset().top;
     if($(window).scrollTop()>600){
         $('.back').addClass('show')
     }else {
@@ -45,12 +45,15 @@ $(function () {
             $('.back').removeClass('show')
         }
     });
+});
 
+//产品&服务 切换动画
+$(function () {
 
     $('.sn-title').toggle(function () {
         $('.sn-box').stop().show();
 
     },function () {
         $('.sn-box').stop().hide();
-    })
-})
+    });
+});

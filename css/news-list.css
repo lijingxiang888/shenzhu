@@ -1,0 +1,196 @@
+.main {
+    width: 100%;
+}
+.main > figure img {
+    width: 100%;
+    height: 100%;
+}
+.main > p {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 96px;
+    margin: 10px auto;
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+.main > p a {
+    color: #62a8ea;
+}
+.main .container {
+    width: 1170px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 30px 0;
+}
+.main .container section {
+    float: left;
+    width: 70%;
+    padding: 30px;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.main section > ul li{
+    width: 100%;
+    height: 220px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+.main section > ul li .media-left {
+    float: left;
+    width: 20%;
+    height: 90px;
+}
+.main section > ul li .media-left img {
+    width: 100%;
+    height: 100%;
+}
+.main section > ul li .media-right {
+    float: right;
+    width: 77%;
+    height: 100%;
+}
+.main section > ul li .media-right h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.main section > ul li .media-right h2:hover a {
+    color: #62a8ea;
+}
+
+.main section > ul li .media-right p.media-des {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #76838f;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:4;
+    overflow: hidden;
+}
+.main section > ul li .media-right p.media-info {
+    height: 40px;
+    line-height: 40px;
+
+}
+.main section > ul li p.media-info span {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #a3afb7;
+}
+.main section > ul li p.media-info span:first-child {
+    display: inline-block;
+    width: 88px;
+    height: 100%;
+    text-align: center;
+    background-color: #f96868;
+}
+.main section > ul li p.media-info span:first-child a {
+    color: #fff;
+}
+.main section .pagination {
+    text-align: center;
+    word-spacing: -3px;
+}
+.main section .pagination span {
+    display: inline-block;
+    width: 70px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 16px;
+    text-align: center;
+    color: #76838f;
+    border: 1px solid #e4eaec;
+    cursor: pointer;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.main section .pagination span:first-child {
+    border-right: 0;
+}
+.main section .pagination span:nth-child(3) {
+    border-left: 0;
+}
+.main section .pagination span:hover {
+    color: #fff;
+    background-color: #999;
+}
+.main section .pagination ul {
+    display: inline-block;
+    vertical-align: top;
+}
+.main section .pagination li {
+    float: left;
+    width: 39px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    border: 1px solid #e4eaec;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.main section .pagination li:hover {
+    background-color: #055bc3;
+}
+.main section .pagination li:hover a {
+    font-size: 16px;
+    color: #fff;
+}
+.main .container aside {
+    float: right;
+    width: 27%;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.main aside > p {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    color: #76838f;
+    background-color: #eee;
+}
+.main aside ul {
+    padding: 15px;
+}
+.main aside li span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    background-color: #f2a654;
+    border-radius: 50%;
+}
+.main aside li a {
+    display: inline-block;
+    width: 262px;
+    color: #666;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.main aside li data {
+    display: block;
+    padding: 15px;
+    font-size: 14px;
+    color: #666;
+}
