@@ -8,13 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="申注网是目前国内专业性最强的知识产权顾问咨询公司之一。公司成立以来，本着“专业，诚信，和谐”的公司宗旨,主要以知识产权贯标，专利导航，9000认证，创新基金申报，高新认证，商标驳回复审,商标异议答辩,专利检索分析,高新企业认定,全方位为个人、企业提供海内外专利申请，商标注册，专利与商标的纠纷。">
     <meta name="keywords" content="专利商标申请,高新企业认定,创新基金申报,专利成果转换,ISO9000认证,企业融资上市,品牌策划,企业认证">
-    <!--[if lt IE 9]>
-    <script src="../js/html5.min.js"></script>
-    <![endif]-->
-    <script src="../js/jquery1.42.min.js"></script>
     <link href="../images/shenzhuwang.ico" rel="shortcut icon">
     <link rel="stylesheet" href="../css/reset.min.css">
     <link rel="stylesheet" href="../css/base.css">
+    <!--[if lt IE 9]>
+    <script src="../js/html5.min.js"></script>
+    <![endif]-->
     <style>
         .main-box {
             width: 100%;
@@ -53,6 +52,7 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+            color: #989898;
         }
         .container input:nth-child(6) {
             width: 200px;
@@ -498,10 +498,10 @@
 <div class="main-box">
     <div class="container">
         <form action="" method="post">
-            <input type="password" placeholder="请输入新密码" required>
-            <input type="password" placeholder="确认密码" required>
+            <input type="password" value="请输入新密码" data-value="请输入新密码" required>
+            <input type="password" value="确认密码" data-value="确认密码" required>
             <div class="clear">
-                <input type="text" placeholder="验证码" required>
+                <input type="text" value="验证码" data-value="验证码" required>
                 <span>
                     <img src="../images/entrance.jpg" alt="验证码">
                 </span>
@@ -566,7 +566,61 @@
     <span class="icon_arrowup"></span>
 </div>
 <!--回到顶部 end-->
-
+<script src="../js/jquery-1.11.3.min.js"></script>
 <script src="../js/back_top.js"></script>
+<script>
+    $(function () {
+        var $input = $('.container input');
+        //十六进制颜色值的正则表达式
+        var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+        /*RGB颜色转换为16进制*/
+        String.prototype.colorHex = function () {
+            var that = this;
+            if (/^(rgb|RGB)/.test(that)) {
+                var aColor = that.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
+                var strHex = "#";
+                for (var i = 0; i < aColor.length; i++) {
+                    var hex = Number(aColor[i]).toString(16);
+                    if (hex === "0") {
+                        hex += hex;
+                    }
+                    strHex += hex;
+                }
+                if (strHex.length !== 7) {
+                    strHex = that;
+                }
+                return strHex;
+            } else if (reg.test(that)) {
+                var aNum = that.replace(/#/, "").split("");
+                if (aNum.length === 6) {
+                    return that;
+                } else if (aNum.length === 3) {
+                    var numHex = "#";
+                    for (var i = 0; i < aNum.length; i += 1) {
+                        numHex += (aNum[i] + aNum[i]);
+                    }
+                    return numHex;
+                }
+            } else {
+                return that;
+            }
+        };
+        $input.focus(function () {
+            var $color = $(this).css('color');
+            var $colorHex = $color.colorHex().toString();//string，但ie8及其以下是对象数据类型，需要toString转换为字符串
+            if ('#989898' === $colorHex){
+                $(this).val('');
+                $(this).css({'color':'#000'})
+            }
+        });
+        $input.blur(function () {
+            if ($(this).val() === ''){
+                var $dataVal = $(this).attr('data-value');
+                $(this).css({'color':'#989898'});
+                $(this).val($dataVal);
+            }
+        })
+    });
+</script>
 </body>
 </html>

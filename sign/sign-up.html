@@ -509,15 +509,15 @@
             <input type="text" value="请输入用户名" data-value="请输入用户名" required>
             <input type="text" value="6-20位的密码" data-value="6-20位的密码" required>
             <input type="text" value="确认密码" data-value="确认密码" required>
-            <input type="text" value="手机"data-value="手机" required>
-            <input type="text" value="邮箱" data-value="邮箱" required>
+            <input type="tel" value="手机"data-value="手机" required>
+            <input type="email" value="邮箱" data-value="邮箱" required>
             <div class="clear">
                 <input type="text" value="验证码" data-value="验证码" required>
                 <span>
                     <img src="../images/entrance.jpg" alt="验证码">
                 </span>
             </div>
-            <button type="button">立即注册</button>
+            <button type="submit">立即注册</button>
             <p><a href="sign-in.html">已有帐号？</a></p>
         </form>
     </div>
@@ -578,22 +578,65 @@
     <span class="icon_arrowup"></span>
 </div>
 <!--回到顶部 end-->
-<script src="../js/jquery1.42.min.js"></script>
+<script src="../js/jquery-1.11.3.min.js"></script>
 <script src="../js/back_top.js"></script>
 <script>
     $(function () {
         var $input = $('.container input');
-
+        //十六进制颜色值的正则表达式
+        var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+        /*RGB颜色转换为16进制*/
+        String.prototype.colorHex = function () {
+            var that = this;
+            if (/^(rgb|RGB)/.test(that)) {
+                var aColor = that.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
+                var strHex = "#";
+                for (var i = 0; i < aColor.length; i++) {
+                    var hex = Number(aColor[i]).toString(16);
+                    if (hex === "0") {
+                        hex += hex;
+                    }
+                    strHex += hex;
+                }
+                if (strHex.length !== 7) {
+                    strHex = that;
+                }
+                return strHex;
+            } else if (reg.test(that)) {
+                var aNum = that.replace(/#/, "").split("");
+                if (aNum.length === 6) {
+                    return that;
+                } else if (aNum.length === 3) {
+                    var numHex = "#";
+                    for (var i = 0; i < aNum.length; i += 1) {
+                        numHex += (aNum[i] + aNum[i]);
+                    }
+                    return numHex;
+                }
+            } else {
+                return that;
+            }
+        };
         $input.focus(function () {
-            var $Color = $(this).css('color');
-            if ('rgb(152, 152, 152)' === $Color){
+            var $color = $(this).css('color');
+            var $colorHex = $color.colorHex().toString();//string，但ie8及其以下是对象数据类型，需要toString转换为字符串
+            var inputReg = /密码/;
+            var inputType = $(this).prop('type');//获取焦点后保存type类型
+            $(this).attr('data-type',inputType);
+            if (inputReg.test($(this).attr('data-value'))){
+                $(this).prop('type','password');
+            }
+            if ('#989898' === $colorHex){
                 $(this).val('');
                 $(this).css({'color':'#000'})
             }
+
         });
         $input.blur(function () {
             if ($(this).val() === ''){
                 var $dataVal = $(this).attr('data-value');
+                var $dataType = $(this).attr('data-type');
+                $(this).prop('type',$dataType);
                 $(this).css({'color':'#989898'});
                 $(this).val($dataVal);
             }
