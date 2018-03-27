@@ -238,55 +238,36 @@ $(function () {
 
 });
 
+//登录验证
 $(function () {
-    var $input = $('.sign-in input');
-    //十六进制颜色值的正则表达式
-    var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-    /*RGB颜色转换为16进制*/
-    String.prototype.colorHex = function () {
-        var that = this;
-        if (/^(rgb|RGB)/.test(that)) {
-            var aColor = that.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
-            var strHex = "#";
-            for (var i = 0; i < aColor.length; i++) {
-                var hex = Number(aColor[i]).toString(16);
-                if (hex === "0") {
-                    hex += hex;
+    var $btn = $('.sign-in button');
+
+    $btn.click(function () {
+        var userpas = $('.sign-in input[type=password]').val(),
+            userName = $('.sign-in input[type=text]').val(),
+            pasReg = /^[a-zA-Z]\w{5,17}$/,
+            nameReg = /^[a-zA-Z0-9_-]{4,16}$/;
+        if (userName && userpas){
+            if (nameReg.test(userName)){
+                if (pasReg.test(userpas)){
+                    console.log('输入正确，发送ajax');
+                }else {
+                    alert('密码格式不正确')
                 }
-                strHex += hex;
+            }else {
+                alert('用户名格式不正确')
             }
-            if (strHex.length !== 7) {
-                strHex = that;
-            }
-            return strHex;
-        } else if (reg.test(that)) {
-            var aNum = that.replace(/#/, "").split("");
-            if (aNum.length === 6) {
-                return that;
-            } else if (aNum.length === 3) {
-                var numHex = "#";
-                for (var i = 0; i < aNum.length; i += 1) {
-                    numHex += (aNum[i] + aNum[i]);
-                }
-                return numHex;
-            }
-        } else {
-            return that;
-        }
-    };
-    $input.focus(function () {
-        var $color = $(this).css('color');
-        var $colorHex = $color.colorHex().toString();//string，但ie8及其以下是对象数据类型，需要toString转换为字符串
-        if ('#989898' === $colorHex){
-            $(this).val('');
-            $(this).css({'color':'#000'})
+        }else if (userName === '' && userpas === ''){
+            alert('请填写用户名和密码')
+        }else if (userName === ''){
+            alert('用户名不能为空')
+        }else {
+            alert('密码不能为空')
         }
     });
-    $input.blur(function () {
-        if ($(this).val() === ''){
-            var $dataVal = $(this).attr('data-value');
-            $(this).css({'color':'#989898'});
-            $(this).val($dataVal);
-        }
-    })
+});
+
+//placeholder插件使用
+$(function () {
+    $('input').placeholder();
 });

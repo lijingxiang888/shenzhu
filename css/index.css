@@ -476,7 +476,8 @@ nav .navbar-container {
 .sign-in > p:last-child > a {
     color: #055bc3;
 }
-.sign-in form input[type='text']
+.sign-in form input[type='text'],
+.sign-in form input[type='password']
 {
     display: block;
     width: 176px;
@@ -486,7 +487,6 @@ nav .navbar-container {
     font-size: 14px;
     border: 1px solid #666;
     border-radius: 50px;
-    color: #989898;
 }
 .sign-in form button[type='button'] {
     display: block;
