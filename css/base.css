@@ -308,6 +308,7 @@ nav .navbar-container {
     position: relative;
     float: left;
     width: 240px;
+    height: 42px;
     line-height: 42px;
 
 }
@@ -325,7 +326,6 @@ nav .navbar-container {
     margin-left: 120px;
 }
 .tool-box .sn-box {
-    display: none;
     position: absolute;
     width: 240px;
     background: rgba(36,136,200,0.78);

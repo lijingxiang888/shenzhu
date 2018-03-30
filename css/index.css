@@ -60,7 +60,7 @@ body {
     -webkit-font-smoothing: antialiased; /*chrome、safari*/
     -moz-osx-font-smoothing: grayscale;/*firefox*/
     -webkit-user-select: none;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 a {
     color: #2a333c;
@@ -607,6 +607,7 @@ nav .navbar-container {
 .server-tabs {
     width: 100%;
     height: 491px;
+    overflow: hidden;
 }
 .server-tabs .server-nav {
     height: 75px;
@@ -1340,13 +1341,65 @@ nav .navbar-container {
     text-align: center;
     color: #ccc;
 }
-/*屏幕尺寸小于1200px的页面布局*/
-@media all and (max-width:1199px) {
-    .top-box {
-        padding: 0 116px;
+/*屏幕尺寸小于1280px的页面布局*/
+@media all and (max-width:1280px) {
+    .sign-in {
+        width: 243px;
+        right: 20px;
     }
-    nav .navbar-container {
-        width: 970px;
+    .sign-in form input[type='checkbox'] {
+        margin-left: 28px;
     }
 }
 
+/*屏幕尺寸小于1024px的页面布局*/
+@media all and (max-width:1024px) {
+    .top-box {
+        padding: 0 50px;
+    }
+    nav .navbar-container {
+        width: 1007px;
+    }
+    .logo-box {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .tool-box {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .tool-box .slidenav {
+        width: 230px;
+    }
+    .tool-box .slidenav .sn-title span:nth-child(2) {
+        margin-left: 100px;
+    }
+    .tool-box .sn-box .sn-box-left p:nth-child(2) a {
+        margin-right: 2px;
+    }
+    .tool-box .sn-box .sn-box-right {
+        left: 230px;
+    }
+    .server-container {
+        width: 1007px;
+    }
+    .server-tabs .server-nav {
+        padding: 0 150px;
+    }
+    .server-tabs .server-nav > li {
+        margin-right: 80px;
+    }
+    /*.bd {*/
+        /*margin: 0 auto;*/
+    /*}*/
+
+
+
+
+
+
+
+    .sign-in {
+        display: none;
+    }
+}

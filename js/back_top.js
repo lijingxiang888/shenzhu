@@ -49,11 +49,15 @@ $(function () {
 
 //产品&服务 切换动画
 $(function () {
-
-    $('.sn-title').toggle(function () {
-        $('.sn-box').stop().show();
-
-    },function () {
-        $('.sn-box').stop().hide();
-    });
+    var flag = false;
+        $('.sn-box').hide();
+        $('.sn-title').click(function () {
+            if (!flag){
+                $('.sn-box').show();
+                flag = true;
+            }else {
+                $('.sn-box').hide();
+                flag = false;
+            }
+        })
 });
