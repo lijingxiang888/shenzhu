@@ -32,21 +32,32 @@
 
         }
         .main-box .container {
-            width: 1170px;
-            height: 100%;
             margin: 0 auto;
             overflow: hidden;
         }
         .main-box .container form {
             width: 400px;
-            height: 500px;
             margin: 0 auto;
             margin-top: 50px;
-            padding: 30px;
+            padding: 30px 30px 0;
             background-color: rgba(255,255,255,.7);
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+        }
+        .container form > div.input-wrapper:nth-of-type(2) input{
+            float: left;
+            width: 80%;
+        }
+        .container form > div.input-wrapper:nth-of-type(2) a {
+            float: right;
+            display: block;
+            width: 20%;
+            height: 43px;
+            line-height: 43px;
+            text-align: center;
+            color: #337ab7;
+            background-color: #fff;
         }
         .container input {
             display: block;
@@ -60,31 +71,7 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
-        .container input:nth-child(6) {
-            width: 200px;
-        }
-        .container input[type=checkbox] {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            margin-right: 10px;
-            vertical-align: -3px;
-        }
-        .container form > div input {
-            float: left;
-            width: 70%;
-        }
-        .container form > div span {
-            float: right;
-            display: block;
-            width: 27%;
-            height: 43px;
 
-        }
-        .container form > div span img {
-            width: 100%;
-            height: 100%;
-        }
         .container form button {
             display: block;
             width: 100%;
@@ -96,12 +83,29 @@
             background-color: #5e7387;
             cursor: pointer;
         }
-        .container form p:last-child {
-            text-align: right;
-            margin-top: 15px;
-        }
-        .container form p:last-child a {
+        .container .logo-agree {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
             font-size: 14px;
+            color: #666;
+            background-color: rgba(255,255,255,.7);
+        }
+        .container .logo-agree p {
+            padding: 10px 30px;
+            box-sizing: border-box;
+        }
+        .container .logo-agree p:first-child {
+            text-align: right;
+        }
+        .container .logo-agree p:first-child a {
+            color: #337ab7;
+        }
+        .container .logo-agree p:last-child {
+            padding-top: 0;
+            padding-bottom: 20px;
+        }
+        .container .logo-agree p:last-child a {
             color: #337ab7;
         }
     </style>
@@ -517,22 +521,30 @@
 <!--main begin-->
 <div class="main-box">
     <div class="container">
-        <form action="" method="post">
-            <input class="username" name="username" type="text" placeholder="字母开头，4~16位之间，只能包含字母、数字和下划线" required>
-            <input class="userpass" name="userpass" type="password" placeholder="字母开头，6~18位之间，只能包含字母、数字和下划线" required>
-            <input class="confirm" name="confirm" type="password" placeholder="确认密码" required>
-            <input class="telephone" name="telephone" type="tel" placeholder="手机号" required>
-            <input class="mailbox" name="mailbox" type="email" placeholder="邮箱" required>
-            <div class="clear">
-                <input class="entrance" name="entrance" type="text" placeholder="验证码" required>
-                <span>
-                    <img src="../images/entrance.jpg" alt="验证码">
-                </span>
+        <form>
+            <div class="input-wrapper">
+                <input class="telephone" name="telephone" type="tel" placeholder="手机号" required>
             </div>
-            <input id="check" name="check" type="checkbox"><label for="check">我已阅读并接受 <a href="zhucexieyi.html" target="_blank" style="color: #eb0c1c">《用户注册协议》</a></label>
+            <div class="input-wrapper clear">
+                <input class="entrance" name="entrance" type="text" placeholder="验证码" required>
+                <a href="javascript:;">免费获取</a>
+            </div>
+            <div class="input-wrapper">
+                <input class="userpass" name="userpass" type="password" placeholder="密码（不少于6位）" required>
+            </div>
+            <div class="input-wrapper">
+                <input class="confirm" name="confirm" type="password" placeholder="确认密码" required>
+            </div>
             <button type="button">立即注册</button>
-            <p><a href="sign-in.html">已有帐号？</a></p>
+
         </form>
+        <div class="logo-agree">
+            <p><a href="sign-in.html">已有帐号？</a></p>
+            <p>点击「注册」按钮，即代表你同意
+                <a href="zhucexieyi.html" target="_blank">《用户注册协议》</a>
+            </p>
+
+        </div>
     </div>
 </div>
 <!--main end-->
@@ -599,104 +611,104 @@
         //placeholder插件使用
         $('input').placeholder();
 
-        var allInput = $('form input');
-        var pasReg = /^[a-zA-Z]\w{5,17}$/;
-        var nameReg = /^[a-zA-Z0-9_-]{4,16}$/;
-        var telReg = /^1\d{10}$/;
-        var emailReg = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
-        var entranceReg = /^[a-zA-Z0-9]{4}$/;
-        allInput.focus(function () {
-            $(this).css("background-color","#fff");
-        });
-        $('.container button').click(function () {
-            allInput.css("background-color","#fff");
-            var inputVal = $('input').serializeArray();//一定要给input加name属性，否则不起作用
-            console.log(inputVal);
-            if (inputVal[0].value !== ''){
-                if (!nameReg.test(inputVal[0].value)){
-                    $(allInput[0]).css("background-color","#cd8690a6");
-                    alert('用户名格式不正确')
-                    return false;
-                }else {
-                    $(allInput[0]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[0]).css("background-color","#cd8690a6");
-                alert('请将用户名填写完整');
-                return false;
-            }
-            if (inputVal[1].value !== ''){
-                if (!pasReg.test(inputVal[1].value)){
-                    $(allInput[1]).css("background-color","#cd8690a6");
-                    alert('密码格式不正确')
-                    return false;
-                }else {
-                    $(allInput[1]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[1]).css("background-color","#cd8690a6");
-                alert('请将密码填写完整');
-                return false;
-            }
-            if (inputVal[2].value !== ''){
-                if (inputVal[1].value !== inputVal[2].value){
-                    $(allInput[2]).css("background-color","#cd8690a6");
-                    alert('两次密码不一致')
-                    return false;
-                }else {
-                    $(allInput[2]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[2]).css("background-color","#cd8690a6");
-                alert('请再次填写密码');
-                return false;
-            }
-            if (inputVal[3].value !== ''){
-                if (!telReg.test(inputVal[3].value)){
-                    $(allInput[3]).css("background-color","#cd8690a6");
-                    alert('手机格式不正确')
-                    return false;
-                }else {
-                    $(allInput[3]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[3]).css("background-color","#cd8690a6");
-                alert('请将手机号填写完整');
-                return false;
-            }
-            if (inputVal[4].value !== ''){
-                if (!emailReg.test(inputVal[4].value)){
-                    $(allInput[4]).css("background-color","#cd8690a6");
-                    alert('邮箱格式不正确')
-                    return false;
-                }else {
-                    $(allInput[4]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[4]).css("background-color","#cd8690a6");
-                alert('请将邮箱填写完整');
-                return false;
-            }
-            if (inputVal[5].value !== ''){
-                if (!entranceReg.test(inputVal[5].value)){
-                    $(allInput[5]).css("background-color","#cd8690a6");
-                    alert('验证码格式不正确')
-                    return false;
-                }else {
-                    $(allInput[5]).css("background-color","#fff");
-                }
-            }else {
-                $(allInput[5]).css("background-color","#cd8690a6");
-                alert('请填写右侧四位验证码');
-                return false;
-            }
-
-            if (!$('#check').prop('checked')){
-                alert('请仔细阅读《用户注册协议》并勾选');
-                return false;
-            }
-            alert('注册成功')
-        })
+        // var allInput = $('form input');
+        // var pasReg = /^[a-zA-Z]\w{5,17}$/;
+        // var nameReg = /^[a-zA-Z0-9_-]{4,16}$/;
+        // var telReg = /^1\d{10}$/;
+        // var emailReg = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        // var entranceReg = /^[a-zA-Z0-9]{4}$/;
+        // allInput.focus(function () {
+        //     $(this).css("background-color","#fff");
+        // });
+        // $('.container button').click(function () {
+        //     allInput.css("background-color","#fff");
+        //     var inputVal = $('input').serializeArray();//一定要给input加name属性，否则不起作用
+        //     console.log(inputVal);
+        //     if (inputVal[0].value !== ''){
+        //         if (!nameReg.test(inputVal[0].value)){
+        //             $(allInput[0]).css("background-color","#cd8690a6");
+        //             alert('用户名格式不正确')
+        //             return false;
+        //         }else {
+        //             $(allInput[0]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[0]).css("background-color","#cd8690a6");
+        //         alert('请将用户名填写完整');
+        //         return false;
+        //     }
+        //     if (inputVal[1].value !== ''){
+        //         if (!pasReg.test(inputVal[1].value)){
+        //             $(allInput[1]).css("background-color","#cd8690a6");
+        //             alert('密码格式不正确')
+        //             return false;
+        //         }else {
+        //             $(allInput[1]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[1]).css("background-color","#cd8690a6");
+        //         alert('请将密码填写完整');
+        //         return false;
+        //     }
+        //     if (inputVal[2].value !== ''){
+        //         if (inputVal[1].value !== inputVal[2].value){
+        //             $(allInput[2]).css("background-color","#cd8690a6");
+        //             alert('两次密码不一致')
+        //             return false;
+        //         }else {
+        //             $(allInput[2]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[2]).css("background-color","#cd8690a6");
+        //         alert('请再次填写密码');
+        //         return false;
+        //     }
+        //     if (inputVal[3].value !== ''){
+        //         if (!telReg.test(inputVal[3].value)){
+        //             $(allInput[3]).css("background-color","#cd8690a6");
+        //             alert('手机格式不正确')
+        //             return false;
+        //         }else {
+        //             $(allInput[3]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[3]).css("background-color","#cd8690a6");
+        //         alert('请将手机号填写完整');
+        //         return false;
+        //     }
+        //     if (inputVal[4].value !== ''){
+        //         if (!emailReg.test(inputVal[4].value)){
+        //             $(allInput[4]).css("background-color","#cd8690a6");
+        //             alert('邮箱格式不正确')
+        //             return false;
+        //         }else {
+        //             $(allInput[4]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[4]).css("background-color","#cd8690a6");
+        //         alert('请将邮箱填写完整');
+        //         return false;
+        //     }
+        //     if (inputVal[5].value !== ''){
+        //         if (!entranceReg.test(inputVal[5].value)){
+        //             $(allInput[5]).css("background-color","#cd8690a6");
+        //             alert('验证码格式不正确')
+        //             return false;
+        //         }else {
+        //             $(allInput[5]).css("background-color","#fff");
+        //         }
+        //     }else {
+        //         $(allInput[5]).css("background-color","#cd8690a6");
+        //         alert('请填写右侧四位验证码');
+        //         return false;
+        //     }
+        //
+        //     if (!$('#check').prop('checked')){
+        //         alert('请仔细阅读《用户注册协议》并勾选');
+        //         return false;
+        //     }
+        //     alert('注册成功')
+        // })
     });
 </script>
 </body>

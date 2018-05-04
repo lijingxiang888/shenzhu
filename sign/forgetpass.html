@@ -53,23 +53,17 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
-        .container input:nth-child(6) {
-            width: 200px;
-        }
-        .container form > div input {
+        .container form .input-wrapper:nth-of-type(2) input {
             float: left;
-            width: 70%;
+            width: 80%;
         }
-        .container form > div span {
+        .container form .input-wrapper:nth-of-type(2) a {
             float: right;
-            display: block;
-            width: 27%;
-            height: 43px;
-
-        }
-        .container form > div span img {
-            width: 100%;
-            height: 100%;
+            width: 20%;
+            line-height: 43px;
+            text-align: center;
+            color: #337ab7;
+            background-color: #fff;
         }
         .container form button {
             display: block;
@@ -82,14 +76,20 @@
             background-color: #5e7387;
             cursor: pointer;
         }
-        .container form p:last-child {
+        .container .return {
+            width: 400px;
+            height: 43px;
+            margin: 0 auto;
+            padding: 0 30px;
             text-align: right;
-            margin-top: 15px;
-        }
-        .container form p:last-child a {
             font-size: 14px;
+            background-color: rgba(255,255,255,.7);
+            box-sizing: border-box;
+        }
+        .container .return a {
             color: #337ab7;
         }
+
     </style>
 </head>
 <body>
@@ -108,7 +108,7 @@
     <div class="top-box clear">
         <div class="top-box-left">
             您好！请<span><a href="sign-in.html">登 录</a></span>/
-            <span><a href="javascript:;">注 册</a></span>
+            <span><a href="sign-up.html">注 册</a></span>
         </div>
         <div class="top-box-right">
             <ul class="clear">
@@ -504,16 +504,24 @@
 <div class="main-box">
     <div class="container">
         <form>
-            <input type="email" placeholder="请输入注册邮箱" required>
-            <div class="clear">
-                <input type="text" placeholder="验证码" required>
-                <span>
-                    <img src="../images/entrance.jpg" alt="验证码">
-                </span>
+            <div class="input-wrapper">
+                <input type="tel" placeholder="请输入手机号码" required>
             </div>
-            <button type="button">下一步</button>
-            <p><a href="sign-in.html">返回登录</a></p>
+            <div class="input-wrapper clear">
+                <input type="text" placeholder="请输入短信验证码" required>
+                <a href="javascript:;">免费获取</a>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" placeholder="请输入新密码">
+            </div>
+            <div class="input-wrapper">
+                <input type="password" placeholder="请确认密码">
+            </div>
+            <button type="button">提交</button>
         </form>
+        <div class="return">
+            <p><a href="sign-in.html">返回登录</a></p>
+        </div>
     </div>
 </div>
 <!--main end-->
@@ -581,26 +589,26 @@
         //placeholder插件使用
         $('input').placeholder();
 
-        var emailReg = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/,
-            entranceReg = /^[a-zA-Z0-9]{4}$/;
-        $('.container button').click(function () {
-            var $emailVal = $('.container input[type=email]').val(),
-                $textVal = $('.container input[type=text]').val();
-
-            if ($emailVal && $textVal){
-                if (emailReg.test($emailVal)){
-                    if (entranceReg.test($textVal)){
-                        alert('邮件已发送，请登录邮箱查看并完成操作')
-                    }else {
-                        alert('验证码格式不正确')
-                    }
-                }else {
-                    alert('邮箱格式不正确')
-                }
-            }else {
-                alert('请将信息填写完整')
-            }
-        })
+        // var emailReg = /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/,
+        //     entranceReg = /^[a-zA-Z0-9]{4}$/;
+        // $('.container button').click(function () {
+        //     var $emailVal = $('.container input[type=email]').val(),
+        //         $textVal = $('.container input[type=text]').val();
+        //
+        //     if ($emailVal && $textVal){
+        //         if (emailReg.test($emailVal)){
+        //             if (entranceReg.test($textVal)){
+        //                 alert('邮件已发送，请登录邮箱查看并完成操作')
+        //             }else {
+        //                 alert('验证码格式不正确')
+        //             }
+        //         }else {
+        //             alert('邮箱格式不正确')
+        //         }
+        //     }else {
+        //         alert('请将信息填写完整')
+        //     }
+        // })
     })
 </script>
 </body>
